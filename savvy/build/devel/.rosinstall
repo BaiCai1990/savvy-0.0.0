@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/lv/catkin_ws/src/savvy/build/devel/setup.sh

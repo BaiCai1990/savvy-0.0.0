@@ -1,0 +1,18 @@
+<launch>
+  <arg name="joy_dev" default="/dev/input/js0" />
+  <arg name="cmd_topic" default="cmd_vel" />
+  <param name="scale_angular" value="0.2" />
+  <param name="scale_linear" value="0.2" />
+
+  <node pkg="joy" type="joy_node" name="joy_node">
+    <param name="dev" value="$(arg joy_dev)" />
+    <param name="deadzone" value="0.3" />
+  </node>
+
+  <node pkg="savvy_joystick" type="savvy_joystick" name="savvy_joystick">
+    <remap from="cmd_vel" to="$(arg cmd_topic)" />
+  </node>
+</launch>
+
+
+

@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: savvy_calibrate
+Description: Description of savvy_calibrate
+Version: 0.0.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: 

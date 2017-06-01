@@ -1,0 +1,6 @@
+<package>
+  <description brief="YDJQR_whole.SLDPRT">YDJQR_whole.SLDPRT</description>
+  <depend package="gazebo" />
+  <author>me</author>
+  <license>BSD</license>
+</package>

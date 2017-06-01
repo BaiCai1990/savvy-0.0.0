@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/lv/catkin_ws/src/button_jvvy/build/devel/setup.sh

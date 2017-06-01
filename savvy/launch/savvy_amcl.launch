@@ -1,0 +1,32 @@
+<launch>
+
+  <param name="use_sim_time" value="false" />
+
+  <!-- Load the URDF/Xacro model of our robot -->
+  <arg name="urdf_file" default="$(find xacro)/xacro.py '$(find savvy_whole_urdf)/urdf/YDJQR_whole.SLDPRT.URDF'" />
+  <param name="robot_description" command="$(arg urdf_file)" />
+  <arg name="model" />
+  <arg name="gui"
+    default="false" />
+  <param name="use_gui" value="$(arg gui)" />
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+
+
+  <!-- Set the name of the map yaml file: can be overridden on the command line. -->
+  <arg name="map" default="my_map.yaml" />
+
+  <!-- node name="map_odom" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 map odom 50"/ -->  
+
+  <!-- Run the map server with the desired map -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find savvy)/maps/$(arg map)"/>
+
+  <!-- The move_base node -->
+  <include file="$(find savvy)/launch/move_base_amcl.launch" />
+  
+  <!--Chaoshun Lv add Fire up AMCL-->
+  <include file="$(find savvy)/launch/tb_amcl.launch" />
+  
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find savvy)/nav_test.rviz" required="true" />
+
+</launch>

@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/SocketClient.h
+stdio.h
+-
+iostream
+-
+string.h
+-
+stdlib.h
+-
+sys/types.h
+-
+sys/socket.h
+-
+sys/un.h
+-
+arpa/inet.h
+-
+netinet/in.h
+-
+boost/concept_check.hpp
+-
+
+/home/lv/catkin_ws/src/savvy_calibrate/src/calibrate_compass.cpp
+SocketClient.h
+/home/lv/catkin_ws/src/savvy_calibrate/src/SocketClient.h
+

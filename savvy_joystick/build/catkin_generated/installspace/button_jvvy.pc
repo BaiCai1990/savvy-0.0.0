@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: button_jvvy
+Description: Description of button_jvvy
+Version: 0.0.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: 

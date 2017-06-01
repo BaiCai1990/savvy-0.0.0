@@ -1,0 +1,8 @@
+prefix=/home/lv/catkin_ws/src/savvy_calibrate/build/devel
+
+Name: savvy_calibrate
+Description: Description of savvy_calibrate
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/lv/catkin_ws/src/savvy_calibrate/build/devel/lib 
+Requires: 

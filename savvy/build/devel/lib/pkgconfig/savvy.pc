@@ -1,0 +1,8 @@
+prefix=/home/lv/catkin_ws/src/savvy/build/devel
+
+Name: savvy
+Description: Description of savvy
+Version: 0.0.0
+Cflags: -I/home/lv/catkin_ws/src/savvy/build/devel/include -I/home/lv/catkin_ws/src/savvy/include
+Libs: -L/home/lv/catkin_ws/src/savvy/build/devel/lib -lsavvy
+Requires: roscpp rospy std_msgs message_runtime
