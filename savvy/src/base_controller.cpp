@@ -138,20 +138,20 @@ int main(int argc, char **argv)
         double delta_y = (msg_real_vel.x * sin(th) + msg_real_vel.y * cos(th)) * dt;
         double delta_th = msg_real_vel.z * dt;
         
-        x += delta_x;
-        y += delta_y;
-        th += delta_th;
+        x += delta_x * odom_linear_scale_correction;
+        y += delta_y * odom_linear_scale_correction;
+        th += delta_th * odom_angular_scale_correction;
  
         // 创建一个四元数变量
-        geometry_msgs::Quaternion odom_quat = tf::createQuaternionMsgFromYaw(th*odom_angular_scale_correction);
+        geometry_msgs::Quaternion odom_quat = tf::createQuaternionMsgFromYaw(th);
 
         geometry_msgs::TransformStamped tf_trans;
         tf_trans.header.stamp = current_time;
         tf_trans.header.frame_id = "odom";
         tf_trans.child_frame_id = "base_link";
         
-        tf_trans.transform.translation.x = x * odom_linear_scale_correction;
-        tf_trans.transform.translation.y = y * odom_linear_scale_correction;
+        tf_trans.transform.translation.x = x ;
+        tf_trans.transform.translation.y = y;
         tf_trans.transform.translation.z = 0.0;
         tf_trans.transform.rotation = odom_quat;
 
@@ -163,8 +163,8 @@ int main(int argc, char **argv)
         odom.header.frame_id = "odom";
         odom.child_frame_id = "base_link";
 
-        odom.pose.pose.position.x = x * odom_linear_scale_correction;
-        odom.pose.pose.position.y = y * odom_linear_scale_correction;
+        odom.pose.pose.position.x = x;
+        odom.pose.pose.position.y = y;
         odom.pose.pose.position.z = 0.0;
         odom.pose.pose.orientation = odom_quat;
 
