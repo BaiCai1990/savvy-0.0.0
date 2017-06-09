@@ -1,13 +1,13 @@
 <launch>
 
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true">
-    <rosparam file="$(find robot)/config/robotconfig/costmap_common_params.yaml" command="load" ns="global_costmap" />
-    <rosparam file="$(find robot)/config/robotconfig/costmap_common_params.yaml" command="load" ns="local_costmap" />
-    <rosparam file="$(find robot)/config/robotconfig/local_costmap_params.yaml" command="load" />
-    <rosparam file="$(find robot)/config/robotconfig/global_costmap_params.yaml" command="load" />
-    <rosparam file="$(find robot)/config/robotconfig/base_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find savvy)/config/robotconfig/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find savvy)/config/robotconfig/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find savvy)/config/robotconfig/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find savvy)/config/robotconfig/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find savvy)/config/robotconfig/base_local_planner_params.yaml" command="load" />
 
-    <rosparam file="$(find robot)/config/robotconfig/nav_obstacles_params.yaml" command="load" />
+    <rosparam file="$(find savvy)/config/robotconfig/nav_obstacles_params.yaml" command="load" />
   </node>
   
 </launch>
